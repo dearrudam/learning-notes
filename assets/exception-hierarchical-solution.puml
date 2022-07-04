@@ -1,0 +1,13 @@
+@startuml
+class "Exception" as ex
+class "BusinessException" as bex
+class "BalanceNotAvailableException" as bnae
+class "ExceededAmoutException" as eae
+class "DeactivatedAccountException" as dae
+class "BlockedAccountException" as bae
+ex <|-- bex
+bex <|-- bnae
+bex <|-- eae
+bex <|-- dae
+bex <|-- bae
+@enduml

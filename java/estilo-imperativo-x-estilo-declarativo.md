@@ -181,8 +181,16 @@ Com isso, compreendo o porque é interessante repensar nossa maneira de programa
 Estou lendo um livro muito legal do renomado **Venkat Subramaniam** : [**"Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expression"**](https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/) e por estar gostando muito, decidi publicar posts com o intuido de fixar meu aprendizado e assim também ajudar quem interessar!
 
 
+Source dos exemplos [^3]:
+
+  -  https://github.com/dearrudam/learning-notes/blob/main/java/ImperativeSample01.java
+  -  https://github.com/dearrudam/learning-notes/blob/main/java/DeclarativeSample01.java
+    
+  -  https://github.com/dearrudam/learning-notes/blob/main/java/ImperativeDiscount.java
+  -  https://github.com/dearrudam/learning-notes/blob/main/java/DeclarativeDiscount.java
+    
 
 [^1]: Estou usando [JSR 354 Java Money](http://javamoney.github.io/).
 [^2]: Primitive Obsession [PT-BR](https://refactoring.guru/pt-br/smells/primitive-obsession) ou [EN-US](https://refactoring.guru/smells/primitive-obsession) 
-
+[^3]: Utilizei [JBang](https://www.jbang.dev/); 
 

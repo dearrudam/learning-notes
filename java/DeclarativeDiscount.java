@@ -8,7 +8,7 @@ import javax.money.Monetary;
 
 import org.javamoney.moneta.Money;
 
-public class FunctionalDiscount {
+public class DeclarativeDiscount {
 
     public static void main(String... args) {
 

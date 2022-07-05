@@ -157,7 +157,7 @@ Como em nosso primeiro exemplo, nós reduzimos longas linhas de código com um e
 O código está conciso, nós conseguimos até ler em voz alta e assim perceber o quanto próximo da especificação do requerimento estamos:
 
 - *filtrar os preços que foram maior que BRL 18.00;*
-- *mapeie o preço atual para o preço aplicando o desconto de 15% e...*
+- *mapeie o preço atual para um novo preço aplicando o desconto de 15% e...*
 - *reduza os preços com desconto somando os e armazenando na variável **totalOfDiscountedPrices***. 
 
 A utilização do método *stream()* fornecido pelas Collections do Java trazem um tipo especial de iterator com uma variedade de funções especiais que poderemos trazer em próximos posts!

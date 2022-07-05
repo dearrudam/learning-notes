@@ -1,6 +1,7 @@
 ---
 title: My title
-description: 
+description:
+language: 
 tags: []
 cover_image:
 series: 

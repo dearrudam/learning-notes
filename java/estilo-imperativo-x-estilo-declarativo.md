@@ -95,7 +95,7 @@ Vamos definir uma coleção de preços e vamos desenvolver algumas formas para c
             Money.of(12, currency));
 
 ```
-Vamos dizer que queremos o total de preços que sejam maiores que BRL 18, aplicando 15% de desconto.
+Vamos dizer que queremos o total de preços que sejam maiores que BRL 18.00, aplicando 15% de desconto.
 
 ### Uma forma habitual
 

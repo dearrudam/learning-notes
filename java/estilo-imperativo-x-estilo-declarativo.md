@@ -1,7 +1,7 @@
 ---
 title: Estilo Imperativo X Estilo Declarativo
 description:
-language: 
+language: PT-BR 
 tags: []
 cover_image:
 series: Programação Funcional com Java

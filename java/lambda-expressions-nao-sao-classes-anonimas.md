@@ -8,14 +8,14 @@ series: Programação Funcional com Java
 published: false
 publish_date: 
 ---
-Seguindo essa série falando um pouco sofre **"Programação Funcional com Java"**, gostaria de fazer uma pergunta:
+Seguindo essa série sobre **"Programação Funcional com Java"**, me deperei com uma dúvida, que talvez não seja só minha, mas vamos lá:
 # Lambda Expressions não são classes anônimas?
-
-Com Java 8, muitas features, como Lambdas Expression, Streams API e Method References nos permitiram a desenvolver com Java de uma maneira diferente, uma maneira **funcional**. Estamos no Java 18, com o Java 19 batendo em nossa porta, com previsão para setembro/2022, e algumas questões sobre essas features, que apesar de não serem tão novas, pairam em nossas cabeças. 
 
 Talvez o óbvio pra mim, não seja óbvio para vocês e vice-versa!
 
-Nesse artigo, vamos conversar um pouco sobre Lambda Expression!
+Então, nesse texto, gostaria de abordar um pouco sobre Lambda Expression!
+
+Com Java 8, muitas features, como Lambdas Expression, Streams API e Method References nos permitiram a desenvolver com Java de uma maneira diferente, uma maneira **funcional**. Estamos no Java 18, com o Java 19 batendo em nossa porta, com previsão para setembro/2022, e algumas questões sobre essas features, que apesar de não serem tão novas, pairam em nossas cabeças. 
 
 ## Objetos de Função
 

@@ -190,13 +190,15 @@ Curiosamente, não precisamos ter tanto conhecimento para interpretar bytecodes 
 Mas e o corpo das lambdas?! 
 
 Dependendo do contexto, o compilador irá converter o corpo das lambdas em um desses possiveis casos:
-  - Ou em métodos estáticos (static methods) da propria classe 
+  - Ou em métodos estáticos (static methods) da própria classe 
   - Ou métodos vinculado a instâncias definidas (instance methods) 
   - Ou simplesmente rotear a chamada para métodos existente em uma outras classes.
 
 Interessante não é!? 
 
-Devo agradecer e muito ao **"Venkat Subramaniam"**, pois em uma palestra que ele apresentou no **Devoxx** em 2015 me ensinou muito! Super recomendo! Segue o link da palestra: [Get a Taste of Lambdas and Get Addicted to Streams by Venkat Subramaniam](https://www.youtube.com/watch?v=1OpAgZvYXLQ).
+Bom, agradeço e muito ao **"Venkat Subramaniam"**, pois em uma palestra que ele apresentou no **Devoxx** em 2015 me ensinou muito! Super recomendo! Segue o link da palestra: [Get a Taste of Lambdas and Get Addicted to Streams by Venkat Subramaniam](https://www.youtube.com/watch?v=1OpAgZvYXLQ).
+
+Até o próximo artigo!!!
 
 ### Source dos exemplos [^3]:
  - [UsingAnonymousClasses.java](https://github.com/dearrudam/learning-notes/blob/main/java/UsingAnonymousClasses.java)

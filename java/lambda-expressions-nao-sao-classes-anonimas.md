@@ -198,7 +198,12 @@ Interessante não é!?
 
 Devo agradecer e muito ao **"Venkat Subramaniam"**, pois em uma palestra que ele apresentou no **Devoxx** em 2015 me ensinou muito! Super recomendo! Segue o link da palestra: [Get a Taste of Lambdas and Get Addicted to Streams by Venkat Subramaniam](https://www.youtube.com/watch?v=1OpAgZvYXLQ).
 
+### Source dos exemplos [^3]:
+ - [UsingAnonymousClasses.java](https://github.com/dearrudam/learning-notes/blob/main/java/UsingAnonymousClasses.java)
+ - [UsingLambdaExpressions.java](https://github.com/dearrudam/learning-notes/blob/main/java/UsingLambdaExpressions.java)
+
 ### Referências:
 
 [^0]: Livro: [Effective Java - Joshua Bloch](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997/ref=sr_1_1?keywords=effective+java&qid=1657086875&s=books&sprefix=effective%2Cstripbooks%2C272&sr=1-1);
 [^1]: Desing Patterns - Strategy [[PT-BR]](https://refactoring.guru/pt-br/design-patterns/strategy)/[[EN-US]](https://refactoring.guru/design-patterns/strategy) | Livro: [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?crid=WNFJ58ETWC0D&keywords=design+patterns&qid=1657081268&sprefix=design+patterns%2Caps%2C266&sr=8-1)
+[^3]: [JBang](https://www.jbang.dev/);

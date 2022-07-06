@@ -44,4 +44,4 @@ Bom, classes anônimas eram adequadas aos padrões clássicos do design orientad
 
 
 
-[^1]: [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?crid=WNFJ58ETWC0D&keywords=design+patterns&qid=1657081268&sprefix=design+patterns%2Caps%2C266&sr=8-1)
+[^1]: Desing Patterns - Strategy [[PT-BR]](https://refactoring.guru/pt-br/design-patterns/strategy)/[[EN-US]](https://refactoring.guru/design-patterns/strategy) | Livro: [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?crid=WNFJ58ETWC0D&keywords=design+patterns&qid=1657081268&sprefix=design+patterns%2Caps%2C266&sr=8-1)

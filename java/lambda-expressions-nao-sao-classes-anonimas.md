@@ -8,7 +8,7 @@ series: Programação Funcional com Java
 published: false
 publish_date: 
 ---
-Seguindo essa série falando um pouco sofre **"Programação Funcional com Java"**, gostaria de trazer algo interessante:
+Seguindo essa série falando um pouco sofre **"Programação Funcional com Java"**, gostaria de fazer uma pergunta:
 # Lambda Expressions não são classes anônimas?
 
 Com Java 8, muitas features, como Lambdas Expression, Streams API e Method References nos permitiram a desenvolver com Java de uma maneira diferente, uma maneira **funcional**. Estamos no Java 18, com o Java 19 batendo em nossa porta, com previsão para setembro/2022, e algumas questões sobre essas features, que apesar de não serem tão novas, pairam em nossas cabeças. 

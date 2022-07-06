@@ -8,7 +8,7 @@ series: Programação Funcional com Java
 published: true
 publish_date: 
 ---
-Seguindo essa série sobre **"Programação Funcional com Java"**, me deperei com uma dúvida, que talvez não seja só minha, mas vamos lá:
+Seguindo essa série sobre **"Programação Funcional com Java"**, me deperei com uma dúvida, que talvez não seja só minha, então vamos lá:
 ## Lambda Expressions não são classes anônimas?
 
 Talvez o óbvio pra mim, não seja óbvio para vocês e vice-versa!

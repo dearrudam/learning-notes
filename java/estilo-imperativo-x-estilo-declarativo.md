@@ -5,7 +5,7 @@ language: PT-BR
 tags: []
 cover_image:
 series: Programação Funcional com Java
-published: false
+published: true
 publish_date: 
 ---
 # Estilo Imperativo X Estilo Declarativo com Java

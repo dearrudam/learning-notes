@@ -5,7 +5,7 @@ language: PT-BR
 tags: []
 cover_image:
 series: Programação Funcional com Java
-published: false
+published: true
 publish_date: 
 ---
 Seguindo essa série sobre **"Programação Funcional com Java"**, me deperei com uma dúvida, que talvez não seja só minha, mas vamos lá:

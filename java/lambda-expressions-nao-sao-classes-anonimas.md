@@ -9,7 +9,7 @@ published: false
 publish_date: 
 ---
 Seguindo essa série sobre **"Programação Funcional com Java"**, me deperei com uma dúvida, que talvez não seja só minha, mas vamos lá:
-# Lambda Expressions não são classes anônimas?
+## Lambda Expressions não são classes anônimas?
 
 Talvez o óbvio pra mim, não seja óbvio para vocês e vice-versa!
 

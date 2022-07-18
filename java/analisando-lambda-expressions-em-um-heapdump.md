@@ -5,8 +5,8 @@ language: PT-BR
 tags: []
 cover_image:
 series: Programação Funcional com Java
-published: false
-publish_date: 
+published: true
+publish_date: Mon 18 Jul 2022 08:00:27 AM -03
 ---
 
 É muito interessante ver o quanto podemos aprender ao compartilhar conhecimento!
@@ -21,7 +21,7 @@ Um desses comentários foi muito interessante, praticamente um [**mini artigo**]
 
 Pois bem, uma coisa interessante sobre Lambdas Expressions é compreender como elas são implementadas.
 
-No artigo anterior, utilizamos o utilitário *javap* para visualizar a classe (*.class) gerada a partir de um dado source com expressões lambdas e assim conferir que as lambdas são chamadas pelas das instruções **InvokeDynamic**.
+No artigo anterior, utilizamos o utilitário *javap* para visualizar a classe (*.class) gerada a partir de um dado source com expressões lambdas e assim conferir que as lambdas são chamadas pelas das instruções **InvokeDynamic** .
 
 Lembram do *mini artigo* do Wellington? 
 
@@ -147,7 +147,7 @@ As classes derivadas de lambdas são geradas "on the fly" pelo componente [Lambd
 
 ## Descobrindo "O POR QUÊ" 
 
-Pesquisando um pouco mais sobre essa propriedade, cheguei a esse issue [JDK-8023524](https://bugs.openjdk.org/browse/JDK-8023524):
+Pesquisando um pouco mais sobre essa propriedade, cheguei a esse issue [JDK-8023524](https://bugs.openjdk.org/browse/JDK-8023524)[^2]:
 
 ![JDK-8023524](https://github.com/dearrudam/learning-notes/raw/main/java/screenshot2022-07-18_04-51-20.png)
 
@@ -165,7 +165,7 @@ Para explorar e ajudar o entendimento, vamos explorar um cenário: Encontrar a l
 
 ## Encontrar lambdas a partir de um heap-dump
 
-Inspirado por um issue no [StackOverflow: Finding a Java lambda from its mangled name in a heap dump](https://stackoverflow.com/questions/41570839/finding-a-java-lambda-from-its-mangled-name-in-a-heap-dump), vamos implementar nosso programa que criará um cenário pŕoximo de um memory leak, porém vamos tentar utilizar ferramentas e entender o porque foi importante a criação dessa propriedade *jdk.internal.lambda.dumpProxyClasses*:
+Inspirado por um issue no [StackOverflow: Finding a Java lambda from its mangled name in a heap dump](https://stackoverflow.com/questions/41570839/finding-a-java-lambda-from-its-mangled-name-in-a-heap-dump)[^3], vamos implementar nosso programa que criará um cenário pŕoximo de um memory leak, porém vamos tentar utilizar ferramentas e entender o porque foi importante a criação dessa propriedade *jdk.internal.lambda.dumpProxyClasses*:
 
 ```java
 import java.util.Arrays;
@@ -221,7 +221,7 @@ public class CollectingIntegerListFromLambdaExpressions {
 
 Basicamente, em nosso programa irá gerar uma lista de objetos de função do tipo *java.util.function.IntSupplier*, e esses serão fornecidos por métodos  através de expressões lambdas, e, a partir dessa lista, iremos gerar uma lista de inteiros e escrever seu conteúdo na saída do programa, porém, para ser possível realizar o dump da heap, a thread main ficará *dormindo* através do método *Thread.sleep*;
 
-No método *suppliersC*, será retornada uma lambda que irá manter a referência do argumento *o*, que é do tipo *Object*, que na verdade receberá a instância de um array de *bytes* com *10.000.000* posições durante a execução. 
+O problema está no método *suppliersC*, e esse método retornará uma lambda que irá manter a referência do argumento *o*, que é do tipo *Object*, que na verdade receberá a instância de um array de *bytes* com *10.000.000* posições durante a execução. 
 
 Essas instâncias estão vinculadas a thread *main*, que pelo fato dela estar dormindo, o Garbage Collector não conseguirá remover essas instâncias da memória, causando assim um cenário de vazamento de memória.
 
@@ -245,11 +245,11 @@ Keeping the application alive in order to let aheap dump be taken.
 Press CTRL+C to close the application.
 
 ```
-E, para capturar o heap-dump, utilizei o Eclipse Memory Analyzer(MAT)[^2]:
+E, para capturar o heap-dump, utilizei o Eclipse Memory Analyzer(MAT)[^4]:
 
 ![memory-leak-lambda.gif](https://github.com/dearrudam/learning-notes/raw/main/java/memory-leak-lambda.gif)
 
-De acordo com a analyzer, uma instância do tipo da class **CollectingIntegerListFromLambdaExpressions$$Lambda$3** está consumindo aproximadamente **10.000.016** bytes (**90.83%**) na memória heap.
+De acordo com a analyzer, uma instância do tipo da classe **CollectingIntegerListFromLambdaExpressions$$Lambda$3** está consumindo aproximadamente **10.000.016** bytes (**90.83%**) na memória heap.
 
 Mas essa classe foi gerada "on the fly" a partir de alguma lambda que não temos como analizar, pois não temos acesso a ela!
 
@@ -444,26 +444,23 @@ Novamente, gostaria de agradecer ao Wellington por compartilhar sua experiência
 
 Obrigado a tosos e até o próximo artigo!!!
 
-### Source dos exemplos [^5]:
+### Source dos exemplos: [^5]
  - [CreatingLambdaExpression.java](https://github.com/dearrudam/learning-notes/blob/main/java/CreatingLambdaExpression.java)
  - [CollectingIntegerListFromLambdaExpressions.java](https://github.com/dearrudam/learning-notes/blob/main/java/CollectingIntegerListFromLambdaExpressions.java)
 
 
 ### Referências
 
+- [**"Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expression" by Venkat Subramaniam**](https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/)
+- : Livro: [Effective Java - Joshua Bloch](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997/ref=sr_1_1?keywords=effective+java&qid=1657086875&s=books&sprefix=effective%2Cstripbooks%2C272&sr=1-1);
+
 [^1]: [Javadoc: java.lang.invoke.LambdaMetafactory](https://docs.oracle.com/javase/8/docs/api/?java/lang/invoke/LambdaMetafactory.html)
 
-[^2]: [Eclipse Memory Analyzer(MAT)](https://www.eclipse.org/mat/)
+[^2]: [Issue: JDK-8023524 - Mechanism to dump generated lambda classes / log lambda code generation](https://bugs.openjdk.org/browse/JDK-8023524)
 
 [^3]: [StackOverflow: Finding a Java lambda from its mangled name in a heap dump](https://stackoverflow.com/questions/41570839/finding-a-java-lambda-from-its-mangled-name-in-a-heap-dump)
 
-[^4] : [Issue: JDK-8023524 - Mechanism to dump generated lambda classes / log lambda code generation](https://bugs.openjdk.org/browse/JDK-8023524)
+[^4]: [Eclipse Memory Analyzer(MAT)](https://www.eclipse.org/mat/)
 
-[^5] : [JBang](https://www.jbang.dev/);
-
-[^6] : [**"Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expression" by Venkat Subramaniam**](https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/)
-
-[^6]: Livro: [Effective Java - Joshua Bloch](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997/ref=sr_1_1?keywords=effective+java&qid=1657086875&s=books&sprefix=effective%2Cstripbooks%2C272&sr=1-1);
-
-
+[^5]: [JBang](https://www.jbang.dev/);
 

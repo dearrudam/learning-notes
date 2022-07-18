@@ -149,7 +149,7 @@ As classes derivadas de lambdas são geradas "on the fly" pelo componente [Lambd
 
 Pesquisando um pouco mais sobre essa propriedade, cheguei a esse issue [JDK-8023524](https://bugs.openjdk.org/browse/JDK-8023524):
 
-![JDK-8023524](https://raw.githubusercontent.com/dearrudam/learning-notes/java/screenshot2022-07-18_04-51-20.png)
+![JDK-8023524](https://github.com/dearrudam/learning-notes/raw/main/java/screenshot2022-07-18_04-51-20.png)
 
 > "The lambda metafactory generates classes on the fly. For supportability and serviceability reasons, it is desirable to be able to inspect these classes..."
 
@@ -245,7 +245,7 @@ Press CTRL+C to close the application.
 ```
 E, para capturar o heap-dump, utilizei o Eclipse Memory Analyzer(MAT)[^2]:
 
-![memory-leak-lambda.gif](https://raw.githubusercontent.com/dearrudam/learning-notes/java/memory-leak-lambda.gif)
+![memory-leak-lambda.gif](https://github.com/dearrudam/learning-notes/raw/main/java/memory-leak-lambda.gif)
 
 De acordo com a analyzer, uma instância do tipo da class **CollectingIntegerListFromLambdaExpressions$$Lambda$3** está consumindo aproximadamente **10.000.016** bytes (**90.83%**) na memória heap.
 

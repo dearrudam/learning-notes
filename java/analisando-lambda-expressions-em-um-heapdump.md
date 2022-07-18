@@ -21,7 +21,7 @@ Um desses comentários foi muito interessante, praticamente um [**mini artigo**]
 
 Pois bem, uma coisa interessante sobre Lambdas Expressions é compreender como elas são implementadas.
 
-No artigo anterior, utilizamos o utilitário *javap* para visualizar a classe (*.class) gerada a partir de um dado source com expressões lambdas e assim conferir que as lambdas são chamadas pelas das instruções **InvokeDynamic** .
+No artigo anterior, utilizamos o utilitário *javap* para visualizar a classe (\*.class) gerada a partir de um dado source com expressões lambdas e assim conferir que as lambdas são chamadas pelas das instruções **InvokeDynamic**.
 
 Lembram do *mini artigo* do Wellington? 
 
@@ -442,7 +442,7 @@ Bom, com isso, podemos ver o poder que essa propriedade pode nos ajudar caso pre
 
 Novamente, gostaria de agradecer ao Wellington por compartilhar sua experiência e espero que eu possa ter agregado a todos vocês um pouco mais com essa minha experiência e que acendam a vontade de todos para compartilhar e ajudar cada vez mais uns aos outros, como uma comunidade tem que ser!
 
-Obrigado a tosos e até o próximo artigo!!!
+Obrigado a todos e até o próximo artigo!!!
 
 ### Source dos exemplos: [^5]
  - [CreatingLambdaExpression.java](https://github.com/dearrudam/learning-notes/blob/main/java/CreatingLambdaExpression.java)

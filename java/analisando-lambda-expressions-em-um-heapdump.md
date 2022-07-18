@@ -151,9 +151,11 @@ Pesquisando um pouco mais sobre essa propriedade, cheguei a esse issue [JDK-8023
 
 ![JDK-8023524](https://github.com/dearrudam/learning-notes/raw/main/java/screenshot2022-07-18_04-51-20.png)
 
+Bom, temos o motivo bem claro aqui:
+
 > "The lambda metafactory generates classes on the fly. For supportability and serviceability reasons, it is desirable to be able to inspect these classes..."
 
-Dando uma traduzida para o português *à brasileira*:
+Dando uma traduzida para o português:
 
 > "A lambda metafactory gera classes em tempo de execução. Por motivos de suporte e manutenção, é desejável poder inspecionar essas classes..."
 

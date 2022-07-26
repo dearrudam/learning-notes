@@ -97,7 +97,7 @@ Mas podemos ir além, graças a essa [resposta](https://stackoverflow.com/a/4746
 -Djdk.internal.lambda.dumpProxyClasses=<dump directory>
 ```
 
-> **P.S**: Quando utilizar essa propriedade, recomendo indicar um diretório vázio, pois a JVM irá **descarregar** além das inner classes geradas pelo seu projeto, ele também descarregará inner classes das bibliotecas de terceiros que seu projeto esteja utilizando. Isso poluirá seu diretorio e talvez, não é o que você deseja, certo?
+> **P.S**: Quando utilizar essa propriedade, recomendo indicar um diretório vazio, pois a JVM irá **descarregar** além das inner classes geradas pelo seu projeto, ele também descarregará inner classes das bibliotecas de terceiros que seu projeto esteja utilizando. Isso poluirá seu diretorio e talvez, não é o que você deseja, certo?
 
 Vamos utilizar na execução do nosso código:
 
@@ -165,7 +165,7 @@ Para explorar e ajudar o entendimento, vamos explorar um cenário: Encontrar a l
 
 ## Encontrar lambdas a partir de um heap-dump
 
-Inspirado por um issue no [StackOverflow: Finding a Java lambda from its mangled name in a heap dump](https://stackoverflow.com/questions/41570839/finding-a-java-lambda-from-its-mangled-name-in-a-heap-dump)[^3], vamos implementar nosso programa que criará um cenário pŕoximo de um memory leak, porém vamos tentar utilizar ferramentas e entender o porque foi importante a criação dessa propriedade *jdk.internal.lambda.dumpProxyClasses*:
+Inspirado por um issue no [StackOverflow: Finding a Java lambda from its mangled name in a heap dump](https://stackoverflow.com/questions/41570839/finding-a-java-lambda-from-its-mangled-name-in-a-heap-dump)[^3], vamos implementar nosso programa que criará um cenário próximo de um memory leak, porém vamos tentar utilizar ferramentas e entender o porque foi importante a criação dessa propriedade *jdk.internal.lambda.dumpProxyClasses*:
 
 ```java
 import java.util.Arrays;
@@ -287,7 +287,7 @@ bin/ $ tree .
 ```
 Como podemos ver, todas as inner classes derivadas do nosso fonte foram **descarregadas** no diretório *bin*. 
 
-> **P.S**: Quando utilizar essa propriedade, recomendo indicar um diretório vázio, pois a JVM irá **descarregar** além das inner classes geradas pelo seu projeto, ele também descarregará inner classes das bibliotecas de terceiros que seu projeto esteja utilizando. Isso poluirá seu diretorio e talvez, não é o que você deseja, certo?
+> **P.S**: Quando utilizar essa propriedade, recomendo indicar um diretório vazio, pois a JVM irá **descarregar** além das inner classes geradas pelo seu projeto, ele também descarregará inner classes das bibliotecas de terceiros que seu projeto esteja utilizando. Isso poluirá seu diretorio e talvez, não é o que você deseja, certo?
 
 Agora, vamos visualizar a classe **CollectingIntegerListFromLambdaExpressions$$Lambda$3.class**: 
 

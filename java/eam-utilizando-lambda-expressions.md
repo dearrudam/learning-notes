@@ -202,7 +202,7 @@ Para nossa solução, vamos utilizar Lambda Expressions para implementar um patt
 
 Esse padrão nos permite encapsular as operações na sequência desejada para que, a partir de uma possível **função de primeira ordem** passada como argumento, dispare a execução das operações e da função de maneira adequada.
 
-### O que é "Função de primeira ordem"
+### O que é "Função de primeira ordem"?
 
 Diferentemente de linguagens de programação funcionais, como Haskell, que favorecem a imutabilidade, o Java nos permite utilizar a mutabilidade. A esse respeito, Java é uma linguagem orientada à objetos, e não é, e nunca será, uma linguagem funcional pura, porém, podemos utilizar o estilo funcional no Java.
 

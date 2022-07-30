@@ -5,8 +5,8 @@ language: PT-BR
 tags: []
 cover_image:
 series: Programação Funcional com Java
-published: false
-publish_date: 
+published: true
+publish_date: Sat 30 Jul 2022 01:21:46 AM -03
 ---
 
 Nos últimos artigos vimos os benefícios de maneira geral em utilizar o estilo de programação funcional, mas será realmente vantajoso começar a utilizar esse novo estilo? Deveríamos mesmo esperar grandes melhorias, ou só estamos trocando *seis por meia dúzia*? 
@@ -309,7 +309,7 @@ Críticas e sugestões serão sempre bem-vindos!!!
 Até a próxima.
 
 ### Source dos exemplos: [^5]
-- [MessageFilterWriter.java](https://github.com/dearrudam/learning-notes/blob/main/java/MessageFilterWriter.java)
+- [MessageFileWriter.java](https://github.com/dearrudam/learning-notes/blob/main/java/MessageFileWriter.java)
 - [MessageFileWriterEAM.java](https://github.com/dearrudam/learning-notes/blob/main/java/MessageFileWriterEAM.java)
 
 

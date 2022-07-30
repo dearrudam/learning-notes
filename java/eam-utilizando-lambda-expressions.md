@@ -13,7 +13,7 @@ Nos últimos artigos vimos os benefícios de maneira geral em utilizar o estilo 
 
 Pode não parecer, mas essas são questões genuínas que nós precisamos responder antes de nos comprometermos nosso tempo e esforço em considerar essa abordagem.
 
-### Por que codar no estilo funciona?
+### Por que codar no estilo funcional?
 
 Olhando a sintaxe do Java, podemos ver que, apesar de muitos acharem ela verbosa até, ela é simples! E uma vez que a sintaxe se torna familiar, sua utilização se torna confortável. Isso é verdade para praticamente qualquer linguagem. Quanto mais familiar estivermos com a linguagem, será confortável trabalhar com suas APIs e frameworks.
 
@@ -52,7 +52,7 @@ Minha humilde tradução:
 
 > Muitas vezes é preciso mais esforço para escrever um código conciso. É menos código para ler, mas código efetivo é transparente. Uma pequena lista de códigos que são difíceis de entender ou que escondem detalhes são mais enxutos do que concisos;    
 
-**PS**: o termo *terse*, pelo que consegui encontrar na internet [^2] , significa que muitas palavras foram descartadas da frase em questão, dificultando sua compreensão, então usei o termo enxuto no contexto. **Fica aqui o apelo pela ajuda por alguém que domina inglês :pray:**
+**PS**: o termo *terse*, pelo que consegui encontrar na internet [^2] , significa que muitas palavras foram descartadas da frase em questão, dificultando sua compreensão, então usei o termo enxuto no contexto. **Fica aqui meu apelo pela ajuda por alguém que domina inglês :pray:**
 
 > Concise code equals design agility. Concise code has less ceremony. This means we can quickly try out our design ideas and move forward if they're good, or move on if they turn sour.
 
@@ -60,7 +60,7 @@ Traduzindo:
 
 > Código conciso é como design ágil. Código conciso tem menos cerimônia. Isso significa que nós podemos experimentar rápidamente nossas ideias de design e seguir em frente se elas forem boas, ou mudá-las se elas "azedarem".   
 
-Então podemos concluir que um código conciso é aquele que além de fazer o que é proposto a fazer, ele deve ser claro, sucinto, sem ambiguidades, curto porém com todas as informações necessária para sua compreensão.
+Então podemos concluir que um código conciso é aquele que além de fazer o que é proposto a fazer, ele deve ser claro, sucinto, sem ambigüidades, curto porém com todas as informações necessária para sua compreensão.
 
 Bom, com certeza não é algo fácil de se atingir... mas não desanimem! Com prática e estudo chegaremos lá! :thumbsup:
 
@@ -202,7 +202,29 @@ Para nossa solução, vamos utilizar Lambda Expressions para implementar um patt
 
 Esse padrão nos permite encapsular as operações na sequência desejada para que, a partir de uma possível **função de primeira ordem** passada como argumento, dispare a execução das operações e da função de maneira adequada.
 
-Primeiro, vamos preparar uma classe chamada `MessageFileWriterEAM` para essa a nova solução:
+### O que é "Função de primeira ordem"
+
+Diferentemente de linguagens de programação funcionais, como Haskell, que favorecem a imutabilidade, o Java nos permite utilizar a mutabilidade. A esse respeito, Java é uma linguagem orientada à objetos, e não é, e nunca será, uma linguagem funcional pura, porém, podemos utilizar o estilo funcional no Java.
+
+As funções de primeira ordem (*Higher-order functions*) elevam o conceito de reusabilidade de código para o próximo nível. Ao invés de somente contar com objetos e classes para promover o reuso, com funções de primeira ordem nós podemos facilmente reutilizar funções pequenas, coesas e muito bem definidas.
+
+Em OOP (*Object-Oriented Programming*), nós passamos objetos para métodos, criamos e retornamos objetos de métodos. Funções de primeira ordem fazem para as funções o que métodos fazem para os objetos. Com funções de primeira ordem podemos:
+
+- Passar funções para funções;
+- Criar funções dentro de funções;
+- Retornar funções de funções;
+
+No Java, podemos:
+
+- Passar *objetos de função* para métodos;
+- Criar *objetos de função* dentro de métodos;
+- Retornar *objetos de função* de métodos;
+
+Logo, podemos usufruir dessa mesma abordagem para trazer esse conceito para o mundo do Java.
+
+Agora vamos voltar aos nossos códigos...
+
+Vamos preparar uma classe chamada `MessageFileWriterEAM` para essa a nova solução utilizando *EAM*:
 
 ```java
 
@@ -272,7 +294,7 @@ E assim podemos ver o ganho na utilização desta abordagem:
     }
 ```
 
-Agora, qualquer componente poderá fazer uso da classe `MessageFileWriterEAM` de maneira concisa, sem se preocupar se há necessidade de fechar recursos ou se precisa orquestrar invocações de métodos pois todos esses detalhes estão encapsulados atrás da chamada do método `use`. Isso abre oportunidade para evoluir o código de implementação, como adicionar features, como por exemplo: logging, etc.
+Agora, qualquer componente poderá fazer uso da classe `MessageFileWriterEAM` de maneira concisa, permitindo os clientes de nossos códigos passar *objetos de função* e consumir a nossos códigos da meneira adequada, sem se preocupar se há necessidade de fechar recursos ou se precisa orquestrar invocações de métodos pois todos esses detalhes estão encapsulados atrás da chamada do método `use`. Isso abre oportunidade para evoluir o código de implementação, como adicionar features, como por exemplo: logging, etc.
 
 E é isso galera!:clap::clap::clap:
 

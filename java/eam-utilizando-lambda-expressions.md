@@ -69,10 +69,10 @@ Que tal agora codar um pouco?
 
 ### EAM - Execute Around Method pattern utilizando Lambda Expressions 
 
-Nos textos anteriores, trouxe a seguinte questão:
+Nos textos anteriores, encontraremos a seguinte questão:
 > Será que estamos lidando de maneira correta os recursos como banco de dados ou fluxos I/O? 
 
-E nos parágrafos subsequentes também trouxe o seguinte texto:
+E nos parágrafos subsequentes também encontraremos o seguinte texto:
 
 > E se nós encapsularmos cada uma dessas decisões em pequenos pedaços de código, onde cada pedaço gerenciasse suas restrições de maneira mais concisa? 
 

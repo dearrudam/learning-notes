@@ -101,11 +101,8 @@ public class MessageFileWriter {
 
 }
 ```
-**TL,DR**
 
 No construtor da classe `MessageFileWriter` inicializamos a instância `FileWriter` passando o nome do arquivo destino em que queremos escrever. Com o método `writeMessage` podemos escrever mensagens utilizando a instância do `FileWriter`. Já o método `closeFile` nós poderemos fechar o recurso chamando o método `close` da instância `FileWriter` e com isso, esperamos que as mensagens sejam descarregadas para o arquivo para só então fechá-lo.  
-
-**END TL,DR**
 
 Agora vamos escrever o método `main` para que possamos utilizar essa classe:
 
@@ -249,7 +246,7 @@ public class MessageFileWriterEAM  {
 ```
 Como você pode ter notado, deixamos essa classe com o construtor e o método `closeFile` privados, além de fazer com que essa classe não implemente mais a interface `AutoClosable`.
 
-Uma vez que não podemos criar diretamente uma instanciar do tipo `MessageFileWriterEAM` pelo seu construtor, nós precisaremos de um método fábrica (*Factory Method*)[^4] para poder usa-la.
+Uma vez que não podemos criar diretamente uma instancia do tipo `MessageFileWriterEAM` pelo seu construtor, nós precisaremos de um método fábrica (*Factory Method*)[^4] para poder usa-la.
 
 Diferentemente dos métodos fábricas que criam uma instância e as devolvem para uso, nosso método vai receber um *objeto de função* do usuário, realizar a operação e só retornar ao fluxo da aplicação após o término de seu trabalho.
 

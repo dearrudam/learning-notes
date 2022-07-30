@@ -294,7 +294,7 @@ E assim podemos ver o ganho na utilização desta abordagem:
     }
 ```
 
-Agora, qualquer componente poderá fazer uso da classe `MessageFileWriterEAM` de maneira concisa, permitindo os clientes de nossos códigos passar *objetos de função* e consumir a nossos códigos da meneira adequada, sem se preocupar se há necessidade de fechar recursos ou se precisa orquestrar invocações de métodos pois todos esses detalhes estão encapsulados atrás da chamada do método `use`. Isso abre oportunidade para evoluir o código de implementação, como adicionar features, como por exemplo: logging, etc.
+Agora, qualquer componente poderá fazer uso da classe `MessageFileWriterEAM` de maneira concisa, permitindo os clientes de nossos códigos passar *objetos de função* e consumir a nossos códigos da maneira adequada, sem se preocupar se há necessidade de fechar recursos ou se precisa orquestrar invocações de métodos pois todos esses detalhes estão encapsulados atrás da chamada do método `use`. Isso abre oportunidade para evoluir o código de implementação, como adicionar features, como por exemplo: logging, etc.
 
 E é isso galera!:clap::clap::clap:
 

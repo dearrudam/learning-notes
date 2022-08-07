@@ -261,7 +261,7 @@ As interfaces funcionais (*Functional Interfaces*) são interfaces que contém u
     }
 ```
 
-**PS**: Nesse nosso exemplo, para fins didádicos optamos em criar uma interface funcional customizada, mas uma boa prática é utilizar as interfaces funcionais padrão fornecidas pelo pacote `java.util.function`[^6] uma vez que alguma atenda sua necessidade. Há aproximadamente **43** interfaces funcionais no pacote `java.util.function`. Não espere se lembrar de todas elas, porém se você lembrar de pelo menos seis interfaces básicas, provavelmente você vai deduzir o restante quando precisar.  
+**PS**: Nesse nosso exemplo, para fins didádicos optamos em criar uma interface funcional customizada, mas uma boa prática é utilizar as interfaces funcionais padrão fornecidas pelo pacote `java.util.function`[^5] uma vez que alguma atenda sua necessidade. Há aproximadamente **43** interfaces funcionais no pacote `java.util.function`. Não espere se lembrar de todas elas, porém se você lembrar de pelo menos seis interfaces básicas, provavelmente você vai deduzir o restante quando precisar.  
 
 `UseMessageFileWriter` será nossa interface funcional. Repare que anotamos a interface com `@FunctionalInterface`. Isso é puramente opcional, mas sempre é útil comunicar a intensão explicitamente para quem for utilizar nossos códigos. Assim, qualquer desenvolvedor irá compreender que é uma interface funcional e que não deve adicionar novos métodos à interface. 
 
@@ -305,7 +305,7 @@ Críticas e sugestões serão sempre bem-vindos!!!
 
 Até a próxima.
 
-### Source dos exemplos: [^5]
+### Source dos exemplos: [^6]
 - [MessageFileWriter.java](https://github.com/dearrudam/learning-notes/blob/main/java/MessageFileWriter.java)
 - [MessageFileWriterEAM.java](https://github.com/dearrudam/learning-notes/blob/main/java/MessageFileWriterEAM.java)
 
@@ -320,6 +320,6 @@ Até a próxima.
 
 [^4]: [Effective Java - Joshua Bloch](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997/ref=sr_1_1?keywords=effective+java&qid=1657086875&s=books&sprefix=effective%2Cstripbooks%2C272&sr=1-1);
 
-[^5]: [JBang](https://www.jbang.dev/);
+[^5]: [Package java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
 
-[^6]: [Package java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
+[^6]: [JBang](https://www.jbang.dev/);

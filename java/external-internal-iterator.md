@@ -1,5 +1,5 @@
 ---
-title: [PT-BR] Collections, forEach, Lambda Expressions - o que é external or internal iterator? 
+title: [PT-BR] Collections, forEach, Lambda Expressions - o que são external ou internal iterators? 
 description: 
 language: PT-BR 
 tags: [java,beginners,tutorial,braziliandevs]
@@ -135,7 +135,7 @@ Obrigado a todos e até o próximo artigo!!!
  - [Iteration.java](https://github.com/dearrudam/learning-notes/blob/main/java/Iteration.java)
 
 
-#### Referências:
+### Referências:
 
 [^0]: Livro:["Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expression" by Venkat Subramaniam](https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/)
 

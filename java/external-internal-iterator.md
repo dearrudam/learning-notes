@@ -9,14 +9,15 @@ published: false
 publish_date: 
 ---
 
-Há vários lugares onde podemos utilizar `Lambda Expressions` em nossas estruturas de códigos, assim como na manipulação de coleções. Com elas podemos manipular coleções, fornecendo uma forma declarativa para filtrar dados, realizar transformações, criar novas coleções, concatenar elementos, entre outras operações. 
+É muito comum utilizarmos estruturas de dados para nos ajudar a atender as necessidades requeridas em nossas aplicações. Uma dessas estruturas são as *collections*. Elas são tão comuns que remover até mesmo uma pequena quantidade de cerimônia para operá-las traria um grande ganho na redução de possíveis confusões que podem aparecer em nossos códigos.
 
+Vamos explorar como podemos utilizar as `Lambda Expressions` para manipular essas tais coleções. Com elas podemos, de uma forma declarativa, filtrar dados, realizar transformações, criar novas coleções, concatenar elementos, entre outras operações. 
 
 ## Iterando em Coleções
 
-Iterar por meio de uma lista é uma operação básica nas coleções (`collection`), e ao longo dos anos essa operação também sofreu mudanças significativa dentro da linguagem Java.
+Iterar por meio de uma lista é uma operação básica nas coleções (`collection`), e ao longo dos anos, essa operação também sofreu mudanças significativa dentro da linguagem Java.
 
-Vamos começar com um exemplo - enumerando uma lista de nomes - utilizando uma abordagem mais antiga e seguir evoluindo até uma versão onde a escrita dessa operação apresente uma forma mais concisa, expressiva, elegante e extensível.
+Vamos começar com um exemplo - enumerando uma lista de nomes - utilizando uma abordagem mais antiga e seguir evoluindo até uma versão onde a escrita dessa operação apresente uma forma mais concisa, expressiva, elegante.
 
 Aqui criamos uma coleção imutável de lista de nomes:
 
@@ -121,8 +122,7 @@ No último código de exemplo nós usamos um ***Method Reference***. O Java nos 
 
 Como não existe **bala de prata**, utilizar `forEach` também tem suas limitações. Uma vez que começa o método, diferentemente das versões que utilizam `for`, a iteração não podem ser interrompidas. Como consequencia, esse estilo é útil em casos comuns onde nós queremos processar cada elemento de uma coleção.  
 
-No próximo artigo, vamos ver como Lambda Expressions podem nos ajudar a remover a mutabilidade e deixar nosso código mais conciso durante operações de transformação com coleções!
-
+No próximo artigo, vamos ver como `Lambda Expressions` podem nos ajudar a lidar com a mutabilidade e deixar nosso código mais conciso durante operações de transformação com coleções...spoiler: **Streams API :rocket: !!!**
 
 Obrigado a todos e até o próximo artigo!!!
 

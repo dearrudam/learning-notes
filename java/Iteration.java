@@ -55,7 +55,7 @@ public class Iteration {
         System.out.println();
         
         // using forEach with Lambda Expression + type inference +  without parentheses
-        developers.forEach((developer) -> System.out.println(developer));
+        developers.forEach(developer -> System.out.println(developer));
 
         
         System.out.println();

@@ -5,8 +5,8 @@ language: PT-BR
 tags: [java,beginners,tutorial,braziliandevs]
 cover_image:
 series: Programação Funcional com Java
-published: false
-publish_date: 
+published: true
+publish_date: Mon 15 Aug 2022 08:38:29 AM -03
 ---
 
 É muito comum utilizarmos estruturas de dados para nos ajudar a atender as necessidades requeridas em nossas aplicações. Uma dessas estruturas são as *collections*. Elas são tão comuns que remover até mesmo uma pequena quantidade de cerimônia para operá-las traria um grande ganho na redução de possíveis confusões que podem aparecer em nossos códigos.

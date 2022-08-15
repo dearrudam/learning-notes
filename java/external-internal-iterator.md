@@ -1,5 +1,5 @@
 ---
-title: [PT-BR] Iterando em coleções com Lambda Expressions... o que é external or internal iterator? 
+title: [PT-BR] Collections, forEach, Lambda Expressions - o que é external or internal iterator? 
 description: 
 language: PT-BR 
 tags: [java,beginners,tutorial,braziliandevs]
@@ -48,21 +48,23 @@ Uma outra forma que o Java também oferece do que o *bom e velho `for`*:
 ```
 Por baixo do capô, essa forma utiliza a interface `Iterator` para iterar entre os itens, chamando o método `hasNext` para saber quando parar de iterar, e o método `next` para capturar o item na posição corrente.
 
-Nesses dois casos, são utilizados *iteradores externos* (**external iterators** [^0]). No primeiro exemplo, precisamos explicitamente controlar a iteração, indicando onde começar e onde parar; Já no segundo, essas mesmas operações acontecem *por baixo dos panos* utilizando os métodos da interface `Iterator`. E mais, através desse controle explícito, podemos utilizar as declarações `break` e `continue` para gerenciar o fluxo de controle da execução da iteração. 
+Nesses dois casos, são utilizados *iteradores externos* (**external iterators** [^0]). 
 
-Com **external iterators**, instruimos o programa **como** fazer a iteração para que, só então atingir **o quê** queremos no final das contas.
+No primeiro exemplo, precisamos explicitamente controlar a iteração, indicando onde começar e onde parar; Já no segundo, essas mesmas operações acontecem *por baixo dos panos* utilizando os métodos da interface `Iterator`. E mais, através desse controle explícito, podemos utilizar as declarações `break` e `continue` para gerenciar o fluxo de controle da execução da iteração. 
 
-A segundo exemplo, iteramos entre os elementos da coleção com menos *cerimônia* do que a primeira versão. A de convir que essa estrutura é melhor do que a primeira somente quando não temos a intenção de modificar a coleção relacionado a um índice em particular, porém, ambas utilizam um estilo imperativo e nós podemos dispensar essa abordagem uma vez que podemos utilizar o estilo funcional.
+Com **external iterators**, instruimos o programa **COMO** fazer a iteração para que, só então atingir o **QUE** queremos no final das contas.
+
+Já no segundo exemplo, iteramos entre os elementos da coleção com menos *cerimônia* do que a primeira versão. Essa estrutura só é melhor do que a primeira quando não temos a intenção de acessar ou modificar a coleção baseada em índices e posições específicas , porém, ambas utilizam um estilo imperativo e nós podemos dispensar essa abordagem uma vez que podemos utilizar o estilo funcional.
 
 Há boas razões a favor de mudar do estilo imperativo para o estilo funcional:
 
-- Loops utilizando `for` são ineretentente sequenciais e são dificeis de paralelizar;
+- Loops utilizando `for` são inerentemente sequenciais e são difíceis de paralelizar;
 - Tais loops são ***non-polymorphic***, isto é, temos que passar a coleção na instrução do `for` ao invés de executar algum método (que pode usufruir do polimorfismo por baixo dos panos) na coleção para executar a tarefa.
 - No nível de design, o princípio **"Tell, don't ask"**[^1] cai por terra! Nós solicitamos a execução de uma específica iteração ao invés de deixar esses detalhes da iteração para a biblioteca de nível mais baixo.
 
-Dito isso, vamos utilizar o estilo funcional no lugar do imperativo, e assim utilizar uma versão de *iteração interna*. 
+Dito isso, vamos utilizar o estilo funcional no lugar do imperativo, e assim utilizar *iteradores internos* (**internal iterators** [^0]). 
 
-Com uma *iteração interna* nós deixamos a maioria das instruções de **COMO** fazer tal iteração para a biblioteca de nível mais baixo e focamos n**O QUE** queremos realizar durante a iteração. 
+Com uma **internal iterators**, nós deixamos a maioria das instruções de **COMO** fazer tal iteração para a biblioteca de nível mais baixo e focamos no **QUE** queremos realizar durante a iteração. 
 
 A interface `Iterable` foi melhorada no Java 8 com um método especial chamado `forEach`, que aceita um parâmetro do tipo `Consumer`. Como o próprio nome indica, uma instância do tipo `Consumer` irá consumir o que for passado pra ele através do seu método `accept`.
 
@@ -74,7 +76,7 @@ A interface `Iterable` foi melhorada no Java 8 com um método especial chamado `
       }
   });
 ```
-Ao trocar a utilização do velho `for` pelo novo *internal iterator* [^0] `forEach` ganhamos o benefício de não necessitar focar em **COMO** iterar na coleção em questão e sim em **O QUE** fazer a cada iteração. O código aplica o princípio **Tell, don't ask** de maneira satisfatória.
+Ao trocar a utilização do velho `for` pelo novo *internal iterator* [^0] `forEach` ganhamos o benefício de não necessitar focar em como iterar na coleção em questão e sim em no que fazer a cada iteração. O código aplica o princípio **Tell, don't ask** de maneira satisfatória.
 
 > Espere um pouco, essa interface `Consumer` não é uma interface funcional!
 
@@ -82,10 +84,11 @@ Exato! Com isso podemos utilizar Lambda Expressions ao invés de implementar uma
 
 O método `forEach` é um método que aplica o pilar *higher-order function*, onde nos permite oferecer uma Lambda Expression ou um bloco de código que irá executar dentro do contexto de cada elemento da lista. A variável `developer` será vinculada a cada elemento da coleção durante sua chamada. 
 
-Assim, a implementação por baixo dos panos deste método terá o controle de como iterar e como executar o objeto de função recebido como argumento e, também porá decidir se a execução deve ser *preguiçosa* (**lazy**), ou em qual será a ordem da iteração, e explorar o paralelismo como achar melhor.
+Assim, a implementação por baixo dos panos deste método terá o controle de como iterar e como executar o objeto de função recebido como argumento. Encapsular a implementação atrás de métodos como esse permitem que implementações como essas possam também poderá decidir vários aspectos interessantes, como se a execução deve ser ou não *preguiçosa* (**lazy**), ou definir a ordem dos itens durante a iteração, ou até explorar o paralelismo como achar melhor. Esse é o poder do *encapsulamento*.
 
 ```java
-  developers.forEach((final String developer) -> System.out.println(developer));
+  developers.forEach((final String developer) -> 
+                            System.out.println(developer));
 ```
 A sintaxe padrão de Lambda Expressions espera que os parâmetros estejam junto com seu tipo definido entre parênteses e separado por vírgulas, mas o compilador Java também oferece a *inferência de tipos* [^2] [^3] [^4].
 
@@ -94,7 +97,8 @@ Baseado na assinatura do método da interface que a Lambda Expression está impl
 Vamos usufruir da inferência de tipos em nosso exemplo tirando a declaração:
 
 ```java
-  developers.forEach((developer) -> System.out.println(developer));
+  developers.forEach((developer) -> 
+                            System.out.println(developer));
 ```
 Assim, baseado no contexto do método, o compilador sabe determinar o tipo do parâmetro que está sendo fornecido.
 
@@ -103,10 +107,11 @@ Para casos onde há multiplos parâmetros, podemos seguir o mesmo princípio, n�
 Para casos onde só há um parâmetro, o compilador Java não exige que o parâmetro esteja dentro de parenteses. 
 
 ```java
-  developers.forEach(developer -> System.out.println(developer));
+  developers.forEach(developer -> 
+                            System.out.println(developer));
 ```
 
-**Mas uma resalva:** parâmetros inferidos são **non-final**. Em um exemplo anterior que escrevemos uma *Lambda Expression* que estamos definimos explicitamente o tipo do parâmetro, nós também definimos o parâmetro como `final`. Isso instrui o compilador a nos alertar caso o parâmetro for modificado dentro da *Lambda Expression*. De modo geral, modificar parâmetros é algo ruim que pode conduzir a erros, então defini-los com `final` é uma boa prática.
+**Mas uma resalva:** parâmetros inferidos são **non-final**. Em um dos exemplos anteriores, escrevemos uma *Lambda Expression* onde além de explicitamente definir o tipo do parâmetro, nós também definimos que o parâmetro deve ser `final`. Isso instrui o compilador a nos alertar caso o parâmetro for modificado dentro da *Lambda Expression*. De modo geral, modificar parâmetros é algo ruim que pode conduzir a erros, então defini-los com `final` é uma boa prática.
 
 Infelizmente, quando favorecemos a inferência de tipos na declaração dos parâmetros em uma Lambda Expressions, temos que ter uma disciplina extra em não modificar os parâmetros, pois o compilador não poderá nos ajudar nesses casos. 
 
@@ -120,7 +125,7 @@ Vimos até agora exemplos com Lambda Expressions, porém há mais um passo que p
 
 No último código de exemplo nós usamos um ***Method Reference***. O Java nos deixa, de maneira simples, substituir o corpo de código com um método nomeado de nossa escolha. Vamos olhar com mais detalhes sobre *Method Reference* em artigos futuros, no worries! :wink:
 
-Como não existe **bala de prata**, utilizar `forEach` também tem suas limitações. Uma vez que começa o método, diferentemente das versões que utilizam `for`, a iteração não podem ser interrompidas. Como consequencia, esse estilo é útil em casos comuns onde nós queremos processar cada elemento de uma coleção.  
+Como não existe **bala de prata**, utilizar `forEach` também tem suas limitações. Uma vez que começa o método, diferentemente das versões que utilizam `for`, a iteração não podem ser interrompidas. Como consequência, esse estilo é útil em casos comuns onde nós queremos processar cada elemento de uma coleção.  
 
 No próximo artigo, vamos ver como `Lambda Expressions` podem nos ajudar a lidar com a mutabilidade e deixar nosso código mais conciso durante operações de transformação com coleções...spoiler: **Streams API :rocket: !!!**
 
@@ -130,7 +135,7 @@ Obrigado a todos e até o próximo artigo!!!
  - [Iteration.java](https://github.com/dearrudam/learning-notes/blob/main/java/Iteration.java)
 
 
-### Referências:
+#### Referências:
 
 [^0]: Livro:["Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expression" by Venkat Subramaniam](https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/)
 

@@ -4,9 +4,6 @@
 import java.util.List;
 import java.util.function.Consumer;
 
-/**
- * Iteration
- */
 public class Iteration {
 
     public static void main(String[] args) {

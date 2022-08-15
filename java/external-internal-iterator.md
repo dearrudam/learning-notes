@@ -17,7 +17,7 @@ Vamos explorar como podemos utilizar as `Lambda Expressions` para manipular essa
 
 Iterar por meio de uma lista é uma operação básica nas coleções (`collection`), e ao longo dos anos, essa operação também sofreu mudanças significativa dentro da linguagem Java.
 
-Vamos começar com um exemplo - enumerando uma lista de nomes - utilizando uma abordagem mais antiga e seguir evoluindo até uma versão onde a escrita dessa operação apresente uma forma mais concisa, expressiva, elegante.
+Vamos começar com um exemplo - enumerando uma lista de nomes - utilizando uma abordagem mais antiga e seguir evoluindo até uma versão onde a escrita dessa operação apresente uma forma mais concisa e elegante.
 
 Aqui criamos uma coleção imutável de lista de nomes:
 

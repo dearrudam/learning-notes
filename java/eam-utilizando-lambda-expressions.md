@@ -7,6 +7,7 @@ cover_image:
 series: Programação Funcional com Java
 published: true
 publish_date: Sat 30 Jul 2022 01:21:46 AM -03
+last_update: Sun 04 Sep 2022 05:16:18 PM -03
 ---
 
 Nos últimos artigos vimos os benefícios de maneira geral em utilizar o estilo de programação funcional, mas será realmente vantajoso começar a utilizar esse novo estilo? Deveríamos mesmo esperar grandes melhorias, ou só estamos trocando *seis por meia dúzia*? 

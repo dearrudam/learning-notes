@@ -256,7 +256,7 @@ As interfaces funcionais (*Functional Interfaces*) são interfaces que contém u
 
 ```java
     @FunctionalInterface
-    public static interface UseMessageFileWriter<T, E extends Throwable> {
+    public interface UseMessageFileWriter<T, E extends Throwable> {
         void accept(T instance) throws E;
     }
 ```

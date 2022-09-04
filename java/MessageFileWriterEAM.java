@@ -2,6 +2,8 @@
 
 import java.io.*;
 
+import java.util.*;;
+
 public class MessageFileWriterEAM {
 
     private FileWriter writer;
@@ -19,7 +21,7 @@ public class MessageFileWriterEAM {
     }
 
     @FunctionalInterface
-    public static interface UseMessageFileWriter<T, E extends Throwable> {
+    public interface UseMessageFileWriter<T, E extends Throwable> {
         void accept(T instance) throws E;
     }
 

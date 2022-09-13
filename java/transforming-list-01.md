@@ -1,18 +1,18 @@
 ---
-title: [PT-BR] Transformando listas com Stream API 
+title: [PT-BR] Transformando listas com Java Stream API 
 description: 
 language: PT-BR 
 tags: [java,beginners,tutorial,braziliandevs]
 cover_image:
 series: Programação Funcional com Java
 published: false
-publish_date: 
+publish_date: Tue 13 Sep 2022 01:48:18 PM -03
 ---
 E aí pessoal! Espero que todos estejam bem!!!
 
 Bom, após descansar do [**TDC Business 2022**](https://thedevconf.com/tdc/2022/business/), onde tive a honra e a felicidade de realizar um sonho: ser coordenador na trilha de Carreira e Mentoria, ser expositor da empresa em que trabalho ([StackSpot](https://stackspot.com)) e ser palestrante na trilha de arquitetura Java, falando sobre **Streams API** junto com [Rolmer Telis de Oliveria](https://www.linkedin.com/in/rolmertelis/), estou de volta explorando, estudando e aprendendo cada vez mais sobre **Programação Funcional com Java**.
 
-No artigo anterior, vimos que a partir do Java 8, a interface `Iterable` foi melhorada com um método especial: um  **default method** chamado `forEach`. Agora, caso estivermos trabalhando com objetos que implementam a interface `Iterable`, poderemos usufruir desse método para iterar nos itens de maneira declarativa, utilizando uma *lambda expression* ou *method reference*s.
+No artigo anterior, vimos que a partir do Java 8, a interface `Iterable` foi melhorada com um método especial: um  **default method** chamado `forEach`. Agora, caso estivermos trabalhando com objetos que implementam a interface `Iterable`, poderemos usufruir desse método para iterar nos itens de maneira declarativa, utilizando uma *lambda expression* ou *method references*.
 
 ## Mas o que são Default Methods
 
@@ -95,13 +95,13 @@ A interface `Stream` fornece as **operações intermediárias** e **operações 
 
 As **operações intermediárias** são operações **lazy**, isto é, elas só são performadas quando uma operação terminal é executada. 
 
-Já as **operações terminais** são responsáveis por efetivamente desencadear toda as operações encadeadas na interface `Stream`. 
+Já as **operações terminadoras** são responsáveis por efetivamente desencadear toda as operações encadeadas através da interface fluente `Stream`. 
 
 O encadeamento dessas operações ocorre com uma ou várias operações intermediárias em conjunto com uma operação terminal, formando assim o **Stream Pipeline**. Vamos conhecer mais sobre a interface `Stream` em blogposts futuros! :wink:
 
 Em nosso exemplo, a operação `map` é uma operação intermediária, e ela só será disparada quando alguma operação terminal for executada, no nosso caso, a operação `collect`.
 
-Agora, em nosso exemplo, não estamos lidando mais com váriaveis mutáveis, e assim deixando declarativo o que queremos. Não precisamos mais criar uma lista vazia. Todas essas preocupações estão sendo controladas e delegadas para a implementação.
+Agora, em nosso exemplo, não estamos lidando mais com váriaveis mutáveis, e assim deixando declarativo o que queremos. Não precisamos mais criar uma lista vazia. Todas essas preocupações estão sendo controladas e delegadas para a implementação fornecida pela API do Java.
 
 Mas podemos também utilizar no lugar da *Lambda Expression* um *Method Reference*, diminuindo ainda mais a chance de algum possível erro na lógica de dentro da declaração da expressão. Vejamos como fica o resultado:
 
@@ -123,7 +123,7 @@ Além de deixar o código conciso do que utilizando *lambda expressions*, ao uti
 
 ### Mas e quanto a performance?
 
-Como já sabemos, a linguagem Java já tem um longo caminho é usada em um grande número de aplicativos corporativos onde o desempenho é crítico. Mas mesmo sabendo disso, é muito razoável questionar se as novas features afetarão o desempenho. 
+Como já sabemos, a linguagem Java já tem um longo caminho e é usada em um grande número de aplicativos corporativos onde o desempenho é crítico. Mas mesmo sabendo disso, é muito razoável questionar se as novas features afetarão o desempenho. 
 
 A resposta é sim, mas principalmente para melhor! Pode parecer ingênuo essa afirmação a princípio, mas antes de discutirmos sobre melhorias de desempenho, vamos lembrar as sábias palavras de Donald Knuth:
 
@@ -177,14 +177,14 @@ Segue uma versão utilizando o estilo funcional e paralelizada de nosso código:
               .filter(i -> isPrime(i))
               .count();
 ```
-Com praticamente nenhum esforço, apenas chamando um outro *default method* chamado `parallelStream` da classe `Collection` habilitamos o paralelismo. Vamos ver se tivemos ganho de desempenho executando esse código:
+Com praticamente nenhum esforço, apenas chamando um outro *default method* chamado `parallelStream` da classe `Collection`, que também fornece uma instância de `Stream`, habilitamos o paralelismo. Vamos ver se tivemos ganho de desempenho executando esse código:
 
 ```bash
  PT0.055318673S
 ```
-Executando essa versão paralelizada, em um processador com 8 núcleos, levou aproximadamente **0.055** segundos para executar a tarefa.
+Executando essa versão paralelizada, em um processador com 8 núcleos, utilizando Java 17, levou aproximadamente **0.055** segundos para executar a tarefa.
 
-Bom, brincadeiras a parte, antes de comemorarmos essa performance, temos que admitir que um grande número de métricas de desempenho podem ser artificiais e não podemos confiar cegamente neles. O que esse exemplo quer demonstrar nada mais é que o uso de lambda expressions e o estilo funcional não significam desempenho ruim. Sempre ao criar código real para aplicações corporativas, devemos ficar de olho no desempenho e tratar as preocupações onde elas surgirem.
+Bom, brincadeiras à parte, antes de comemorarmos essa performance, temos que admitir que um grande número de métricas de desempenho podem ser artificiais e não podemos confiar cegamente neles. O que esse exemplo quer demonstrar nada mais é que o uso de lambda expressions e o estilo funcional não significam desempenho ruim. Sempre ao criar código real para aplicações corporativas, devemos ficar de olho no desempenho e tratar as preocupações onde elas surgirem.
 
 ### E é isso aí pessoal:thumbsup: ...
 
@@ -198,7 +198,7 @@ Críticas e sugestões serão sempre bem-vindos!!!
 
 No próximo blogpost, vamos conhecer mais sobre **Stream API**, seu funcionamento, seu pipeline, suas operações e detalhes entre outras coisas...
 
-Até a próxima.
+Até a próxima!
 
 ### Source dos exemplos [^4]:
 - [GettingProductPrices.java](https://github.com/dearrudam/learning-notes/blob/main/java/GettingProductPrices.java)
